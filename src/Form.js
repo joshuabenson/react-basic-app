@@ -1,23 +1,25 @@
 import React, {Component} from 'react'
 
 class Form extends Component {
-  handleChange = (event) => {
-    const {name, value} = event.target
-  
-    this.setState({
-      [name]: value,
-    })
-  }
+
   initialState = {
     name: '',
     job: '',
-  }
-  submitForm = () => {
-    this.props.handleSubmit(this.state)
-    this.setState(this.initialState)
-  }
+  };
+  state = this.initialState;
+  
+  handleChange = (event) => {
+    const {name, value} = event.target;
+    this.setState({
+      [name]: value,
+    });
+  };
 
-  state = this.initialState
+  submitForm = () => {
+    this.props.handleSubmit(this.state);
+    this.setState(this.initialState);
+  };
+
   render() {
     const { name, job } = this.state;
   
@@ -38,9 +40,10 @@ class Form extends Component {
           value={job}
           onChange={this.handleChange} />
           <input type="button" value="Submit" onClick={this.submitForm} disabled={!this.state.name || !this.state.job} />
-      </form>
-      
+      </form>    
     );
-  }
-}
+  
+  };
+
+};
 export default Form;
