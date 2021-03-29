@@ -1,11 +1,15 @@
 import React from 'react';
+import NumberFormat from 'react-number-format';
 
 const TableHeader = () => {
     return (
       <thead>
         <tr>
+          <th>Ticker Symbol</th>
           <th>Name</th>
-          <th>Job</th>
+          <th>Current Price</th>
+          <th>Market Cap</th>
+          <th>Book Value Trailing 12 Months</th>
           <th>Remove</th>
         </tr>
       </thead>
@@ -13,13 +17,22 @@ const TableHeader = () => {
 };
 
 const TableBody = (props) => {
-  const rows = props.characterData.map((row, index) => {
+  const rows = props.stockData.map((row, index) => {
     return (
       <tr key={index}>
-        <td>{row.name}</td>
-        <td>{row.job}</td>
+        <td>{row.symbol}</td>
+        <td>{row.companyName}</td>
         <td>
-          <button onClick={() => props.removeCharacter(index)}>Delete</button>
+          <NumberFormat value={row.price} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+        </td>
+        <td>
+          <NumberFormat value={row.mktCap} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+        </td>
+        <td>
+          <NumberFormat value={row.bookValuePerShareTTM} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+        </td>
+        <td>
+          <button onClick={() => props.removeStock(index)}>Delete</button>
         </td>
       </tr>
     );
@@ -28,12 +41,12 @@ const TableBody = (props) => {
 };
 
 const Table = (props) => {
-    const {characterData, removeCharacter} = props
+    const {stockData, removeStock} = props
   
     return (
       <table>
         <TableHeader />
-        <TableBody characterData={characterData} removeCharacter={removeCharacter} />
+        <TableBody stockData={stockData} removeStock={removeStock} />
       </table>
     );
   };

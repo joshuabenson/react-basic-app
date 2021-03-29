@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
 
 class Form extends Component {
-
+  
   initialState = {
-    name: '',
-    job: '',
+    symbol: ''
   };
   state = this.initialState;
   
@@ -21,29 +20,21 @@ class Form extends Component {
   };
 
   render() {
-    const { name, job } = this.state;
+    const {symbol} = this.state;
     return (
       <form>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Enter a Ticker Symbol</label>
         <input
           type="text"
-          name="name"
-          id="name"
-          value={name}
+          name="symbol"
+          id="symbol"
+          value={symbol}
           onChange={this.handleChange} />
-        <label htmlFor="job">Job</label>
-        <input
-          type="text"
-          name="job"
-          id="job"
-          value={job}
-          onChange={this.handleChange} />
-          <input type="button" value="Submit" onClick={this.submitForm} disabled={!this.state.name || !this.state.job} />
+        <input type="button" value="Submit" onClick={this.submitForm} disabled={!this.state.symbol} />
       </form>    
     );
   
   };
 
 };
-
 export default Form;
