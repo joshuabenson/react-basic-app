@@ -5,13 +5,11 @@ import Form from './Form'
 class App extends Component {
 
   state = {
-    characters: [
-    ]
+    characters: []
   };
 
   removeCharacter = (index) => {
     const {characters} = this.state;
-  
     this.setState({
       characters: characters.filter((character, i) => {
         return i !== index;
@@ -30,8 +28,9 @@ class App extends Component {
         <Table characterData={characters} removeCharacter={this.removeCharacter} />
         <Form handleSubmit={this.handleSubmit}/>
       </div>
-    );;
+    );
   };
+
 };
 
 export default App;

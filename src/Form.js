@@ -22,7 +22,6 @@ class Form extends Component {
 
   render() {
     const { name, job } = this.state;
-  
     return (
       <form>
         <label htmlFor="name">Name</label>
@@ -46,4 +45,5 @@ class Form extends Component {
   };
 
 };
+
 export default Form;
