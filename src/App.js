@@ -28,19 +28,24 @@ class App extends Component {
 	handleSubmit = (stock) => {
 		const fetchStockData = (stock) => {
 			fetch('https://financialmodelingprep.com/api/v3/profile/' + stock.symbol.toUpperCase() + '?apikey=ea4063dd504a48c85e6a945bf8918972')
-				.then((result) => result.json())
 				.then((result) => {
-				if (result[0]) {
-					fetch('https://financialmodelingprep.com/api/v3/key-metrics-ttm/' + stock.symbol.toUpperCase() + '?apikey=ea4063dd504a48c85e6a945bf8918972')
-					.then((keyMetricsResult) => keyMetricsResult.json())
-					.then((keyMetricsResult) => {
-					result = {...result[0], ...keyMetricsResult[0]};
-					Store.dispatch({ type: 'ADD_STOCK', object: result });
-					});
-				} else {
-					toast("Symbol " + stock.symbol.toUpperCase() + " not found");
-				}
-			});
+					if (result.status > 299) {
+						toast("API error " + result.status);
+					}
+					return result.json();
+				})
+				.then((result) => {
+					if (result[0]) {
+						fetch('https://financialmodelingprep.com/api/v3/key-metrics-ttm/' + stock.symbol.toUpperCase() + '?apikey=ea4063dd504a48c85e6a945bf8918972')
+						.then((keyMetricsResult) => keyMetricsResult.json())
+						.then((keyMetricsResult) => {
+							result = {...result[0], ...keyMetricsResult[0]};
+							Store.dispatch({ type: 'ADD_STOCK', object: result });
+						});
+					} else {
+						toast("Symbol " + stock.symbol.toUpperCase() + " not found");
+					}
+				});
 		};
 		fetchStockData(stock);
 	};
