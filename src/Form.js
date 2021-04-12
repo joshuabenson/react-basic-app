@@ -14,7 +14,7 @@ class Form extends Component {
 
 	handleChange = (event) => {
 		const {name, value} = event.target;
-		// set the state to the form value
+		// set the component state to the form value
 		this.setState({
 			[name]: value,
 		});
@@ -22,12 +22,12 @@ class Form extends Component {
 
 	submitForm = () => {
 		this.props.handleSubmit(this.state);
-		// clear the state
+		// clear the component state
 		this.setState(this.initialState);
 	}
 
 	componentDidMount = () => {
-		// listening and intervening on return/enter press because by default form will POST and reload page
+		// listening for enter press because by default form will POST and cause a full page reload
 		this.element.current.addEventListener('keypress', (event) => {
 			if (event.keyCode === 13) {
 				event.preventDefault();
@@ -37,7 +37,7 @@ class Form extends Component {
 		});
 	}
 
-	render() {
+	render = () => {
 		const {symbol} = this.state;
 		return (
 			<form ref={this.element}>
