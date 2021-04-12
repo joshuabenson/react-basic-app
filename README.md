@@ -1,6 +1,6 @@
 # React stocks demo app
 
-Basic stock price display app. Uses React and Redux. Requests stock data from [financialmodelingprep.com](financialmodelingprep.com).
+Basic stock price display app. Uses React and Redux. Requests stock data from [https://financialmodelingprep.com](financialmodelingprep.com).
 
 ## Live Demo
 
