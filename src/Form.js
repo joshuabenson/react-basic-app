@@ -25,7 +25,7 @@ class Form extends Component {
 		// clear the state
 		this.setState(this.initialState);
 	}
-	
+
 	componentDidMount = () => {
 		// listening and intervening on return/enter press because by default form will POST and reload page
 		this.element.current.addEventListener('keypress', (event) => {
@@ -44,7 +44,6 @@ class Form extends Component {
 				<label htmlFor="name">Enter a Ticker Symbol</label>
 				<input
 					type="text"
-					className="symbol-form"
 					name="symbol"
 					id="symbol"
 					value={symbol}
