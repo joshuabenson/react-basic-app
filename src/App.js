@@ -14,11 +14,11 @@ class App extends Component {
 	};
 
   	componentDidMount() {
-    this.unsubscribeStore = Store.subscribe(this.updateStateFromStore);
+		this.unsubscribeStore = Store.subscribe(this.updateStateFromStore);
   	}
 
   	componentWillUnmount() {
-    	this.unsubscribeStore();
+		this.unsubscribeStore();
   	}
 
 	removeStock = (index) => {
