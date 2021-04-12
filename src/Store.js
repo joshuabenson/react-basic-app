@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
 
-function stocks(state = [], action) {
+const stocks = (state = [], action) => {
 
     if (action.type === 'ADD_STOCK') {
         return state.concat([action.object]);
@@ -9,7 +9,7 @@ function stocks(state = [], action) {
         return state.filter((item, index) => {
             return index !== action.index;
         });
-        
+
     } else if (action.type === 'CLEAR_STOCKS') {
         return [];
     }

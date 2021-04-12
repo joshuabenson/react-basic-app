@@ -10,20 +10,20 @@ class App extends Component {
 	state = Store.getState();
 
 	updateStateFromStore = () => {
-		this.setState(Store.getState())
-	};
+		this.setState(Store.getState());
+	}
 
-  	componentDidMount() {
+  	componentDidMount = () => {
 		this.unsubscribeStore = Store.subscribe(this.updateStateFromStore);
   	}
 
-  	componentWillUnmount() {
+  	componentWillUnmount = () => {
 		this.unsubscribeStore();
   	}
 
 	removeStock = (index) => {
 		Store.dispatch({ type: 'REMOVE_STOCK', index: index });
-	};
+	}
 
 	handleSubmit = (stock) => {
 		const fetchStockData = (stock) => {
@@ -48,7 +48,7 @@ class App extends Component {
 				});
 		};
 		fetchStockData(stock);
-	};
+	}
 
 	handleUpdate = () => {
 		let stocks = Store.getState();
@@ -56,9 +56,9 @@ class App extends Component {
 		stocks.forEach((stock, index) => {
 			this.handleSubmit(stock);
 		});
-	};
+	}
 
-	render() {
+	render = () => {
 		return (
 		<div className="container">
 			<Form handleSubmit={this.handleSubmit}/>
@@ -67,7 +67,7 @@ class App extends Component {
 			<ToastContainer />
 		</div>
 		);
-	};
-};
+	}
+}
 
 export default App;

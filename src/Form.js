@@ -6,10 +6,11 @@ class Form extends Component {
 		symbol: ''
 	};
   	state = this.initialState;
+
 	constructor(props) {
 		super(props);
 		this.element = React.createRef();
-	};
+	}
 
 	handleChange = (event) => {
 		const {name, value} = event.target;
@@ -17,13 +18,14 @@ class Form extends Component {
 		this.setState({
 			[name]: value,
 		});
-	};
+	}
 
 	submitForm = () => {
 		this.props.handleSubmit(this.state);
 		// clear the state
 		this.setState(this.initialState);
-	};
+	}
+	
 	componentDidMount = () => {
 		// listening and intervening on return/enter press because by default form will POST and reload page
 		this.element.current.addEventListener('keypress', (event) => {
@@ -33,7 +35,7 @@ class Form extends Component {
 			  	return false;
 			}
 		});
-	};
+	}
 
 	render() {
 		const {symbol} = this.state;
@@ -42,6 +44,7 @@ class Form extends Component {
 				<label htmlFor="name">Enter a Ticker Symbol</label>
 				<input
 					type="text"
+					className="symbol-form"
 					name="symbol"
 					id="symbol"
 					value={symbol}
@@ -49,6 +52,6 @@ class Form extends Component {
 				<input type="button" value="Submit" onClick={this.submitForm} disabled={!this.state.symbol} />
 			</form>
 		);
-  	};
-};
+  	}
+}
 export default Form;
