@@ -15,6 +15,14 @@ class App extends Component {
 
   	componentDidMount = () => {
 		this.unsubscribeStore = Store.subscribe(this.updateStateFromStore);
+
+		const searchParams = new URLSearchParams(window.location.search);
+		console.log('here', searchParams.getAll('symbol'));
+		searchParams.getAll('symbol').forEach((symbolParam) => {
+			console.log('symbol', symbolParam);
+			this.handleSubmit({symbol: symbolParam});
+		});
+
   	}
 
   	componentWillUnmount = () => {

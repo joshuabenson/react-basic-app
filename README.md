@@ -4,7 +4,7 @@ Basic stock price display app. Uses React and Redux. Requests stock data from [f
 
 ## Live Demo
 
-Github pages demo: [joshuabenson.github.io/react-basic-app/](https://joshuabenson.github.io/react-basic-app/)
+Github pages demo: [joshuabenson.github.io/react-basic-app/](https://joshuabenson.github.io/react-basic-app?symbol=dsa)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
