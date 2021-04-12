@@ -42,7 +42,6 @@ class Form extends Component {
 				<label htmlFor="name">Enter a Ticker Symbol</label>
 				<input
 					type="text"
-					className="symbol-form"
 					name="symbol"
 					id="symbol"
 					value={symbol}
