@@ -1,10 +1,11 @@
-# React Stock symbol display demo app
+# React stocks demo app
 
-Basic stock price display app. Uses React and Redux. Requests stock data from [financialmodelingprep.com]financialmodelingprep.com.
+Basic stock price display app. Uses React and Redux. Requests stock data from [financialmodelingprep.com](financialmodelingprep.com).
 
 ## Live Demo
 
-Github pages demo: [https://joshuabenson.github.io/react-basic-app/]https://joshuabenson.github.io/react-basic-app/
+Github pages demo: [https://joshuabenson.github.io/react-basic-app/](https://joshuabenson.github.io/react-basic-app/)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
