@@ -4,7 +4,7 @@ Basic stock price display app. Uses React and Redux. Requests stock data from [f
 
 ## Live Demo
 
-Github pages demo: [joshuabenson.github.io/react-basic-app?symbol=nio?symbol=nio&symbol=chpt](https://joshuabenson.github.io/react-basic-app?symbol=nio&symbol=chpt)
+Github pages demo: [joshuabenson.github.io/react-basic-app/?symbol=cciv&symbol=nio](https://joshuabenson.github.io/react-basic-app/?symbol=cciv&symbol=nio)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
