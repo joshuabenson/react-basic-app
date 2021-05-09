@@ -6,7 +6,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 class App extends Component {
-
 	state = Store.getState();
 
 	updateStateFromStore = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import NumberFormat from 'react-number-format';
 
 const TableHeader = () => {
-    return (
+	return (
 		<thead>
 			<tr>
 				<th>Ticker Symbol</th>
@@ -13,7 +13,7 @@ const TableHeader = () => {
 				<th>Remove</th>
 			</tr>
 		</thead>
-    );
+	);
 };
 
 const TableBody = (props) => {
@@ -37,11 +37,11 @@ const TableBody = (props) => {
 		</tr>
 		);
 	});
-  	return <tbody>{rows}</tbody>;
+	return <tbody>{rows}</tbody>;
 };
 
 const Table = (props) => {
-    const {stockData, removeStock} = props;
+	const {stockData, removeStock} = props;
 	return (
 		<table>
 			<TableHeader />
