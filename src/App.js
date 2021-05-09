@@ -71,9 +71,9 @@ class App extends Component {
 	render = () => {
 		return (
 			<div className="container">
-				<Form handleSubmit={this.handleSubmit}/>
+				<Form handleSubmit={this.addStockAndRequestMetrics}/>
 				<Table stockData={Store.getState()} removeStock={this.removeStock} />
-				<input type="button" value="Update" onClick={this.addStockAndRequestMetrics} />
+				<input type="button" value="Update" onClick={this.handleUpdate} />
 				<ToastContainer />
 			</div>
 		);
